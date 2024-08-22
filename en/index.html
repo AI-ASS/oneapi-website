@@ -1,0 +1,1286 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Access all LLM through the standard OpenAI API format, easy to deploy & use">
+      
+      
+        <meta name="author" content="OneAPI Group">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../zh/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>English - OneAPI Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OneAPI Docs" class="md-header__button md-logo" aria-label="OneAPI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OneAPI Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              English
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/songquanpeng/one-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    songquanpeng/one-api
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  README
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OneAPI Docs" class="md-nav__button md-logo" aria-label="OneAPI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OneAPI Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/songquanpeng/one-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    songquanpeng/one-api
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    README
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            README
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-machine-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-machine Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-on-control-panels-eg-baota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment on Control Panels (e.g., Baota)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-on-third-party-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment on Third-Party Platforms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Line Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Projects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中文
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ja/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    日本語
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-machine-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-machine Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-on-control-panels-eg-baota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment on Control Panels (e.g., Baota)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-on-third-party-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment on Third-Party Platforms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Line Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screenshots
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Projects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/songquanpeng/oneapi-pro/tree/website/docs/en.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/songquanpeng/oneapi-pro/tree/website/docs/en.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+  <h1>English</h1>
+
+<p align="right">
+    <a href="./README.md">中文</a> | <strong>English</strong> | <a href="./README.ja.md">日本語</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/songquanpeng/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/default/public/logo.png" width="150" height="150" alt="one-api logo"></a>
+</p>
+
+<div align="center">
+
+# One API
+
+_✨ Access all LLM through the standard OpenAI API format, easy to deploy & use ✨_
+
+</div>
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/songquanpeng/one-api/main/LICENSE">
+    <img src="https://img.shields.io/github/license/songquanpeng/one-api?color=brightgreen" alt="license">
+  </a>
+  <a href="https://github.com/songquanpeng/one-api/releases/latest">
+    <img src="https://img.shields.io/github/v/release/songquanpeng/one-api?color=brightgreen&include_prereleases" alt="release">
+  </a>
+  <a href="https://hub.docker.com/repository/docker/justsong/one-api">
+    <img src="https://img.shields.io/docker/pulls/justsong/one-api?color=brightgreen" alt="docker pull">
+  </a>
+  <a href="https://github.com/songquanpeng/one-api/releases/latest">
+    <img src="https://img.shields.io/github/downloads/songquanpeng/one-api/total?color=brightgreen&include_prereleases" alt="release">
+  </a>
+  <a href="https://goreportcard.com/report/github.com/songquanpeng/one-api">
+    <img src="https://goreportcard.com/badge/github.com/songquanpeng/one-api" alt="GoReportCard">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#deployment">Deployment Tutorial</a>
+  ·
+  <a href="#usage">Usage</a>
+  ·
+  <a href="https://github.com/songquanpeng/one-api/issues">Feedback</a>
+  ·
+  <a href="#screenshots">Screenshots</a>
+  ·
+  <a href="https://openai.justsong.cn/">Live Demo</a>
+  ·
+  <a href="#faq">FAQ</a>
+  ·
+  <a href="#related-projects">Related Projects</a>
+  ·
+  <a href="https://iamazing.cn/page/reward">Donate</a>
+</p>
+
+<blockquote>
+<p><strong>Warning</strong>: This README is translated by ChatGPT. Please feel free to submit a PR if you find any translation errors.</p>
+<p><strong>Warning</strong>: The Docker image for English version is <code>justsong/one-api-en</code>.</p>
+<p><strong>Note</strong>: The latest image pulled from Docker may be an <code>alpha</code> release. Specify the version manually if you require stability.</p>
+</blockquote>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ol class="task-list">
+<li>Support for multiple large models:</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://platform.openai.com/docs/guides/gpt/chat-completions-api">OpenAI ChatGPT Series Models</a> (Supports <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/reference">Azure OpenAI API</a>)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://anthropic.com">Anthropic Claude Series Models</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://developers.generativeai.google">Google PaLM2 and Gemini Series Models</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/index.html">Baidu Wenxin Yiyuan Series Models</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://help.aliyun.com/document_detail/2400395.html">Alibaba Tongyi Qianwen Series Models</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://bigmodel.cn">Zhipu ChatGLM Series Models</a></li>
+<li>Supports access to multiple channels through <strong>load balancing</strong>.</li>
+<li>Supports <strong>stream mode</strong> that enables typewriter-like effect through stream transmission.</li>
+<li>Supports <strong>multi-machine deployment</strong>. <a href="#multi-machine-deployment">See here</a> for more details.</li>
+<li>Supports <strong>token management</strong> that allows setting token expiration time and usage count.</li>
+<li>Supports <strong>voucher management</strong> that enables batch generation and export of vouchers. Vouchers can be used for account balance replenishment.</li>
+<li>Supports <strong>channel management</strong> that allows bulk creation of channels.</li>
+<li>Supports <strong>user grouping</strong> and <strong>channel grouping</strong> for setting different rates for different groups.</li>
+<li>Supports channel <strong>model list configuration</strong>.</li>
+<li>Supports <strong>quota details checking</strong>.</li>
+<li>Supports <strong>user invite rewards</strong>.</li>
+<li>Allows display of balance in USD.</li>
+<li>Supports announcement publishing, recharge link setting, and initial balance setting for new users.</li>
+<li>Offers rich <strong>customization</strong> options:<ol>
+<li>Supports customization of system name, logo, and footer.</li>
+<li>Supports customization of homepage and about page using HTML &amp; Markdown code, or embedding a standalone webpage through iframe.</li>
+</ol>
+</li>
+<li>Supports management API access through system access tokens.</li>
+<li>Supports Cloudflare Turnstile user verification.</li>
+<li>Supports user management and multiple user login/registration methods:<ul>
+<li>Email login/registration and password reset via email.</li>
+<li><a href="https://github.com/settings/applications/new">GitHub OAuth</a>.</li>
+<li>WeChat Official Account authorization (requires additional deployment of <a href="https://github.com/songquanpeng/wechat-server">WeChat Server</a>).</li>
+</ul>
+</li>
+<li>Immediate support and encapsulation of other major model APIs as they become available.</li>
+</ol>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<h3 id="docker-deployment">Docker Deployment<a class="headerlink" href="#docker-deployment" title="Permanent link">&para;</a></h3>
+<p>Deployment command: <code>docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api-en</code></p>
+<p>Update command: <code>docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower -cR</code></p>
+<p>The first <code>3000</code> in <code>-p 3000:3000</code> is the port of the host, which can be modified as needed.</p>
+<p>Data will be saved in the <code>/home/ubuntu/data/one-api</code> directory on the host. Ensure that the directory exists and has write permissions, or change it to a suitable directory.</p>
+<p>Nginx reference configuration:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>server{
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   server_name openai.justsong.cn;  # Modify your domain name accordingly
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   location / {
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>          client_max_body_size  64m;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>          proxy_http_version 1.1;
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>          proxy_pass http://localhost:3000;  # Modify your port accordingly
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>          proxy_set_header Host $host;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>          proxy_set_header X-Forwarded-For $remote_addr;
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>          proxy_cache_bypass $http_upgrade;
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>          proxy_set_header Accept-Encoding gzip;
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   }
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>}
+</span></code></pre></div></p>
+<p>Next, configure HTTPS with Let's Encrypt certbot:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Install certbot on Ubuntu:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>--classic<span class="w"> </span>certbot
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/snap/bin/certbot<span class="w"> </span>/usr/bin/certbot
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Generate certificates &amp; modify Nginx configuration</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Follow the prompts</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Restart Nginx</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>sudo<span class="w"> </span>service<span class="w"> </span>nginx<span class="w"> </span>restart
+</span></code></pre></div></p>
+<p>The initial account username is <code>root</code> and password is <code>123456</code>.</p>
+<h3 id="manual-deployment">Manual Deployment<a class="headerlink" href="#manual-deployment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Download the executable file from <a href="https://github.com/songquanpeng/one-api/releases/latest">GitHub Releases</a> or compile from source:
+   <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/songquanpeng/one-api.git
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Build the frontend</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">cd</span><span class="w"> </span>one-api/web/default
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>npm<span class="w"> </span>install
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># Build the backend</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">cd</span><span class="w"> </span>../..
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>go<span class="w"> </span>mod<span class="w"> </span>download
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>go<span class="w"> </span>build<span class="w"> </span>-ldflags<span class="w"> </span><span class="s2">&quot;-s -w&quot;</span><span class="w"> </span>-o<span class="w"> </span>one-api
+</span></code></pre></div></li>
+<li>Run:
+   <div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>one-api
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>./one-api<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span><span class="w"> </span>--log-dir<span class="w"> </span>./logs
+</span></code></pre></div></li>
+<li>Access <a href="http://localhost:3000/">http://localhost:3000/</a> and log in. The initial account username is <code>root</code> and password is <code>123456</code>.</li>
+</ol>
+<p>For more detailed deployment tutorials, please refer to <a href="https://iamazing.cn/page/how-to-deploy-a-website">this page</a>.</p>
+<h3 id="multi-machine-deployment">Multi-machine Deployment<a class="headerlink" href="#multi-machine-deployment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Set the same <code>SESSION_SECRET</code> for all servers.</li>
+<li>Set <code>SQL_DSN</code> and use MySQL instead of SQLite. All servers should connect to the same database.</li>
+<li>Set the <code>NODE_TYPE</code> for all non-master nodes to <code>slave</code>.</li>
+<li>Set <code>SYNC_FREQUENCY</code> for servers to periodically sync configurations from the database.</li>
+<li>Non-master nodes can optionally set <code>FRONTEND_BASE_URL</code> to redirect page requests to the master server.</li>
+<li>Install Redis separately on non-master nodes, and configure <code>REDIS_CONN_STRING</code> so that the database can be accessed with zero latency when the cache has not expired.</li>
+<li>If the main server also has high latency accessing the database, Redis must be enabled and <code>SYNC_FREQUENCY</code> must be set to periodically sync configurations from the database.</li>
+</ol>
+<p>Please refer to the <a href="#environment-variables">environment variables</a> section for details on using environment variables.</p>
+<h3 id="deployment-on-control-panels-eg-baota">Deployment on Control Panels (e.g., Baota)<a class="headerlink" href="#deployment-on-control-panels-eg-baota" title="Permanent link">&para;</a></h3>
+<p>Refer to <a href="https://github.com/songquanpeng/one-api/issues/175">#175</a> for detailed instructions.</p>
+<p>If you encounter a blank page after deployment, refer to <a href="https://github.com/songquanpeng/one-api/issues/97">#97</a> for possible solutions.</p>
+<h3 id="deployment-on-third-party-platforms">Deployment on Third-Party Platforms<a class="headerlink" href="#deployment-on-third-party-platforms" title="Permanent link">&para;</a></h3>
+<details>
+<summary><strong>Deploy on Sealos</strong></summary>
+<div>
+
+> Sealos supports high concurrency, dynamic scaling, and stable operations for millions of users.
+
+> Click the button below to deploy with one click.👇
+
+[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=one-api)
+
+
+</div>
+</details>
+
+<details>
+<summary><strong>Deployment on Zeabur</strong></summary>
+<div>
+
+> Zeabur's servers are located overseas, automatically solving network issues, and the free quota is sufficient for personal usage.
+
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/7Q0KO3)
+
+1. First, fork the code.
+2. Go to [Zeabur](https://zeabur.com?referralCode=songquanpeng), log in, and enter the console.
+3. Create a new project. In Service -> Add Service, select Marketplace, and choose MySQL. Note down the connection parameters (username, password, address, and port).
+4. Copy the connection parameters and run ```create database `one-api` ``` to create the database.
+5. Then, in Service -> Add Service, select Git (authorization is required for the first use) and choose your forked repository.
+6. Automatic deployment will start, but please cancel it for now. Go to the Variable tab, add a `PORT` with a value of `3000`, and then add a `SQL_DSN` with a value of `<username>:<password>@tcp(<addr>:<port>)/one-api`. Save the changes. Please note that if `SQL_DSN` is not set, data will not be persisted, and the data will be lost after redeployment.
+7. Select Redeploy.
+8. In the Domains tab, select a suitable domain name prefix, such as "my-one-api". The final domain name will be "my-one-api.zeabur.app". You can also CNAME your own domain name.
+9. Wait for the deployment to complete, and click on the generated domain name to access One API.
+
+</div>
+</details>
+
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>The system is ready to use out of the box.</p>
+<p>You can configure it by setting environment variables or command line parameters.</p>
+<p>After the system starts, log in as the <code>root</code> user to further configure the system.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Add your API Key on the <code>Channels</code> page, and then add an access token on the <code>Tokens</code> page.</p>
+<p>You can then use your access token to access One API. The usage is consistent with the <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a>.</p>
+<p>In places where the OpenAI API is used, remember to set the API Base to your One API deployment address, for example: <code>https://openai.justsong.cn</code>. The API Key should be the token generated in One API.</p>
+<p>Note that the specific API Base format depends on the client you are using.</p>
+<pre class="mermaid"><code>graph LR
+    A(User)
+    A ---&gt;|Request| B(One API)
+    B --&gt;|Relay Request| C(OpenAI)
+    B --&gt;|Relay Request| D(Azure)
+    B --&gt;|Relay Request| E(Other downstream channels)</code></pre>
+<p>To specify which channel to use for the current request, you can add the channel ID after the token, for example: <code>Authorization: Bearer ONE_API_KEY-CHANNEL_ID</code>.
+Note that the token needs to be created by an administrator to specify the channel ID.</p>
+<p>If the channel ID is not provided, load balancing will be used to distribute the requests to multiple channels.</p>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>REDIS_CONN_STRING</code>: When set, Redis will be used as the storage for request rate limiting instead of memory.<ul>
+<li>Example: <code>REDIS_CONN_STRING=redis://default:redispw@localhost:49153</code></li>
+</ul>
+</li>
+<li><code>SESSION_SECRET</code>: When set, a fixed session key will be used to ensure that cookies of logged-in users are still valid after the system restarts.<ul>
+<li>Example: <code>SESSION_SECRET=random_string</code></li>
+</ul>
+</li>
+<li><code>SQL_DSN</code>: When set, the specified database will be used instead of SQLite. Please use MySQL version 8.0.<ul>
+<li>Example: <code>SQL_DSN=root:123456@tcp(localhost:3306)/oneapi</code></li>
+</ul>
+</li>
+<li><code>LOG_SQL_DSN</code>: When set, a separate database will be used for the <code>logs</code> table; please use MySQL or PostgreSQL.<ul>
+<li>Example: <code>LOG_SQL_DSN=root:123456@tcp(localhost:3306)/oneapi-logs</code></li>
+</ul>
+</li>
+<li><code>FRONTEND_BASE_URL</code>: When set, the specified frontend address will be used instead of the backend address.<ul>
+<li>Example: <code>FRONTEND_BASE_URL=https://openai.justsong.cn</code></li>
+</ul>
+</li>
+<li>'MEMORY_CACHE_ENABLED': Enabling memory caching can cause a certain delay in updating user quotas, with optional values of 'true' and 'false'. If not set, it defaults to 'false'.</li>
+<li><code>SYNC_FREQUENCY</code>: When set, the system will periodically sync configurations from the database, with the unit in seconds. If not set, no sync will happen.<ul>
+<li>Example: <code>SYNC_FREQUENCY=60</code></li>
+</ul>
+</li>
+<li><code>NODE_TYPE</code>: When set, specifies the node type. Valid values are <code>master</code> and <code>slave</code>. If not set, it defaults to <code>master</code>.<ul>
+<li>Example: <code>NODE_TYPE=slave</code></li>
+</ul>
+</li>
+<li><code>CHANNEL_UPDATE_FREQUENCY</code>: When set, it periodically updates the channel balances, with the unit in minutes. If not set, no update will happen.<ul>
+<li>Example: <code>CHANNEL_UPDATE_FREQUENCY=1440</code></li>
+</ul>
+</li>
+<li><code>CHANNEL_TEST_FREQUENCY</code>: When set, it periodically tests the channels, with the unit in minutes. If not set, no test will happen.<ul>
+<li>Example: <code>CHANNEL_TEST_FREQUENCY=1440</code></li>
+</ul>
+</li>
+<li><code>POLLING_INTERVAL</code>: The time interval (in seconds) between requests when updating channel balances and testing channel availability. Default is no interval.<ul>
+<li>Example: <code>POLLING_INTERVAL=5</code></li>
+</ul>
+</li>
+<li><code>BATCH_UPDATE_ENABLED</code>: Enabling batch database update aggregation can cause a certain delay in updating user quotas. The optional values are 'true' and 'false', but if not set, it defaults to 'false'.
+    +Example: <code>BATCH_UPDATE_ENABLED=true</code>
+    +If you encounter an issue with too many database connections, you can try enabling this option.</li>
+<li><code>BATCH_UPDATE_INTERVAL=5</code>: The time interval for batch updating aggregates, measured in seconds, defaults to '5'.
+    +Example: <code>BATCH_UPDATE_INTERVAL=5</code></li>
+<li>Request frequency limit:<ul>
+<li><code>GLOBAL_API_RATE_LIMIT</code>: Global API rate limit (excluding relay requests), the maximum number of requests within three minutes per IP, default to 180.</li>
+<li><code>GLOBAL_WEL_RATE_LIMIT</code>: Global web speed limit, the maximum number of requests within three minutes per IP, default to 60.</li>
+</ul>
+</li>
+<li>Encoder cache settings:
+    +<code>TIKTOKEN_CACHE_DIR</code>: By default, when the program starts, it will download the encoding of some common word elements online, such as' gpt-3.5 turbo '. In some unstable network environments or offline situations, it may cause startup problems. This directory can be configured to cache data and can be migrated to an offline environment.
+    +<code>DATA_GYM_CACHE_DIR</code>: Currently, this configuration has the same function as' TIKTOKEN-CACHE-DIR ', but its priority is not as high as it.</li>
+<li><code>RELAY_TIMEOUT</code>: Relay timeout setting, measured in seconds, with no default timeout time set.</li>
+<li><code>RELAY_PROXY</code>: After setting up, use this proxy to request APIs.</li>
+<li><code>USER_CONTENT_REQUEST_TIMEOUT</code>: The timeout period for users to upload and download content, measured in seconds.</li>
+<li><code>USER_CONTENT_REQUEST_PROXY</code>: After setting up, use this agent to request content uploaded by users, such as images.</li>
+<li><code>SQLITE_BUSY_TIMEOUT</code>: SQLite lock wait timeout setting, measured in milliseconds, default to '3000'.</li>
+<li><code>GEMINI_SAFETY_SETTING</code>: Gemini's security settings are set to 'BLOCK-NONE' by default.</li>
+<li><code>GEMINI_VERSION</code>: The Gemini version used by the One API, which defaults to 'v1'.</li>
+<li><code>THE</code>: The system's theme setting, default to 'default', specific optional values refer to [here] (./web/README. md).</li>
+<li><code>ENABLE_METRIC</code>: Whether to disable channels based on request success rate, default not enabled, optional values are 'true' and 'false'.</li>
+<li><code>METRIC_QUEUE_SIZE</code>: Request success rate statistics queue size, default to '10'.</li>
+<li><code>METRIC_SUCCESS_RATE_THRESHOLD</code>: Request success rate threshold, default to '0.8'.</li>
+<li><code>INITIAL_ROOT_TOKEN</code>: If this value is set, a root user token with the value of the environment variable will be automatically created when the system starts for the first time.</li>
+<li><code>INITIAL_ROOT_ACCESS_TOKEN</code>: If this value is set, a system management token will be automatically created for the root user with a value of the environment variable when the system starts for the first time.</li>
+</ol>
+<h3 id="command-line-parameters">Command Line Parameters<a class="headerlink" href="#command-line-parameters" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>--port &lt;port_number&gt;</code>: Specifies the port number on which the server listens. Defaults to <code>3000</code>.<ul>
+<li>Example: <code>--port 3000</code></li>
+</ul>
+</li>
+<li><code>--log-dir &lt;log_dir&gt;</code>: Specifies the log directory. If not set, the logs will not be saved.<ul>
+<li>Example: <code>--log-dir ./logs</code></li>
+</ul>
+</li>
+<li><code>--version</code>: Prints the system version number and exits.</li>
+<li><code>--help</code>: Displays the command usage help and parameter descriptions.</li>
+</ol>
+<h2 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">&para;</a></h2>
+<p><img alt="channel" src="https://user-images.githubusercontent.com/39998050/233837954-ae6683aa-5c4f-429f-a949-6645a83c9490.png" />
+<img alt="token" src="https://user-images.githubusercontent.com/39998050/233837971-dab488b7-6d96-43af-b640-a168e8d1c9bf.png" /></p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<ol>
+<li>What is quota? How is it calculated? Does One API have quota calculation issues?<ul>
+<li>Quota = Group multiplier * Model multiplier * (number of prompt tokens + number of completion tokens * completion multiplier)</li>
+<li>The completion multiplier is fixed at 1.33 for GPT3.5 and 2 for GPT4, consistent with the official definition.</li>
+<li>If it is not a stream mode, the official API will return the total number of tokens consumed. However, please note that the consumption multipliers for prompts and completions are different.</li>
+</ul>
+</li>
+<li>Why does it prompt "insufficient quota" even though my account balance is sufficient?<ul>
+<li>Please check if your token quota is sufficient. It is separate from the account balance.</li>
+<li>The token quota is used to set the maximum usage and can be freely set by the user.</li>
+</ul>
+</li>
+<li>It says "No available channels" when trying to use a channel. What should I do?<ul>
+<li>Please check the user and channel group settings.</li>
+<li>Also check the channel model settings.</li>
+</ul>
+</li>
+<li>Channel testing reports an error: "invalid character '&lt;' looking for beginning of value"<ul>
+<li>This error occurs when the returned value is not valid JSON but an HTML page.</li>
+<li>Most likely, the IP of your deployment site or the node of the proxy has been blocked by CloudFlare.</li>
+</ul>
+</li>
+<li>ChatGPT Next Web reports an error: "Failed to fetch"<ul>
+<li>Do not set <code>BASE_URL</code> during deployment.</li>
+<li>Double-check that your interface address and API Key are correct.</li>
+</ul>
+</li>
+</ol>
+<h2 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/labring/FastGPT">FastGPT</a>: Knowledge question answering system based on the LLM</li>
+<li><a href="https://github.com/VisActor/VChart">VChart</a>:  More than just a cross-platform charting library, but also an expressive data storyteller.</li>
+<li><a href="https://github.com/VisActor/VMind">VMind</a>:  Not just automatic, but also fantastic. Open-source solution for intelligent visualization.</li>
+</ul>
+<h2 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
+<p>This project is an open-source project. Please use it in compliance with OpenAI's <a href="https://openai.com/policies/terms-of-use">Terms of Use</a> and <strong>applicable laws and regulations</strong>. It must not be used for illegal purposes.</p>
+<p>This project is released under the MIT license. Based on this, attribution and a link to this project must be included at the bottom of the page.</p>
+<p>The same applies to derivative projects based on this project.</p>
+<p>If you do not wish to include attribution, prior authorization must be obtained.</p>
+<p>According to the MIT license, users should bear the risk and responsibility of using this project, and the developer of this open-source project is not responsible for this.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../zh/" class="md-footer__link md-footer__link--next" aria-label="Next: 中文">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                中文
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-2024 OneAPI Group. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>

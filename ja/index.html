@@ -1,0 +1,1235 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Access all LLM through the standard OpenAI API format, easy to deploy & use">
+      
+      
+        <meta name="author" content="OneAPI Group">
+      
+      
+      
+        <link rel="prev" href="../zh/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>日本語 - OneAPI Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OneAPI Docs" class="md-header__button md-logo" aria-label="OneAPI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OneAPI Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              日本語
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/songquanpeng/one-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    songquanpeng/one-api
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../en/" class="md-tabs__link">
+          
+  
+    
+  
+  README
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OneAPI Docs" class="md-nav__button md-logo" aria-label="OneAPI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OneAPI Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/songquanpeng/one-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    songquanpeng/one-api
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    README
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            README
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    中文
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    日本語
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    日本語
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      特徴
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      デプロイメント
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="デプロイメント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker デプロイメント
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      マニュアルデプロイ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      マルチマシンデプロイ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baota" class="md-nav__link">
+    <span class="md-ellipsis">
+      コントロールパネル（例: Baota）への展開
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      サードパーティプラットフォームへのデプロイ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      コンフィグ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      環境変数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      コマンドラインパラメータ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      スクリーンショット
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      関連プロジェクト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      注
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      特徴
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      デプロイメント
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="デプロイメント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker デプロイメント
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      マニュアルデプロイ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      マルチマシンデプロイ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baota" class="md-nav__link">
+    <span class="md-ellipsis">
+      コントロールパネル（例: Baota）への展開
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      サードパーティプラットフォームへのデプロイ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      コンフィグ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      環境変数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      コマンドラインパラメータ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      スクリーンショット
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      関連プロジェクト
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      注
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/songquanpeng/oneapi-pro/tree/website/docs/ja.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/songquanpeng/oneapi-pro/tree/website/docs/ja.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+  <h1>日本語</h1>
+
+<p align="right">
+    <a href="./README.md">中文</a> | <a href="./README.en.md">English</a> | <strong>日本語</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/songquanpeng/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/default/public/logo.png" width="150" height="150" alt="one-api logo"></a>
+</p>
+
+<div align="center">
+
+# One API
+
+_✨ 標準的な OpenAI API フォーマットを通じてすべての LLM にアクセスでき、導入と利用が容易です ✨_
+
+</div>
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/songquanpeng/one-api/main/LICENSE">
+    <img src="https://img.shields.io/github/license/songquanpeng/one-api?color=brightgreen" alt="license">
+  </a>
+  <a href="https://github.com/songquanpeng/one-api/releases/latest">
+    <img src="https://img.shields.io/github/v/release/songquanpeng/one-api?color=brightgreen&include_prereleases" alt="release">
+  </a>
+  <a href="https://hub.docker.com/repository/docker/justsong/one-api">
+    <img src="https://img.shields.io/docker/pulls/justsong/one-api?color=brightgreen" alt="docker pull">
+  </a>
+  <a href="https://github.com/songquanpeng/one-api/releases/latest">
+    <img src="https://img.shields.io/github/downloads/songquanpeng/one-api/total?color=brightgreen&include_prereleases" alt="release">
+  </a>
+  <a href="https://goreportcard.com/report/github.com/songquanpeng/one-api">
+    <img src="https://goreportcard.com/badge/github.com/songquanpeng/one-api" alt="GoReportCard">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#deployment">デプロイチュートリアル</a>
+  ·
+  <a href="#usage">使用方法</a>
+  ·
+  <a href="https://github.com/songquanpeng/one-api/issues">フィードバック</a>
+  ·
+  <a href="#screenshots">スクリーンショット</a>
+  ·
+  <a href="https://openai.justsong.cn/">ライブデモ</a>
+  ·
+  <a href="#faq">FAQ</a>
+  ·
+  <a href="#related-projects">関連プロジェクト</a>
+  ·
+  <a href="https://iamazing.cn/page/reward">寄付</a>
+</p>
+
+<blockquote>
+<p><strong>警告</strong>: この README は ChatGPT によって翻訳されています。翻訳ミスを発見した場合は遠慮なく PR を投稿してください。</p>
+<p><strong>警告</strong>： 英語版の Docker イメージは <code>justsong/one-api-en</code> です。</p>
+<p><strong>注</strong>: Docker からプルされた最新のイメージは、<code>alpha</code> リリースかもしれません。安定性が必要な場合は、手動でバージョンを指定してください。</p>
+</blockquote>
+<h2 id="_1">特徴<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol class="task-list">
+<li>複数の大型モデルをサポート:</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://platform.openai.com/docs/guides/gpt/chat-completions-api">OpenAI ChatGPT シリーズモデル</a> (<a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/reference">Azure OpenAI API</a> をサポート)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://anthropic.com">Anthropic Claude シリーズモデル</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://developers.generativeai.google">Google PaLM2/Gemini シリーズモデル</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/index.html">Baidu Wenxin Yiyuan シリーズモデル</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://help.aliyun.com/document_detail/2400395.html">Alibaba Tongyi Qianwen シリーズモデル</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://bigmodel.cn">Zhipu ChatGLM シリーズモデル</a></li>
+<li>**ロードバランシング**による複数チャンネルへのアクセスをサポート。</li>
+<li>ストリーム伝送によるタイプライター的効果を可能にする**ストリームモード**に対応。</li>
+<li>**マルチマシンデプロイ**に対応。<a href="#multi-machine-deployment">詳細はこちら</a>を参照。</li>
+<li>トークンの有効期限や使用回数を設定できる**トークン管理**に対応しています。</li>
+<li>**バウチャー管理**に対応しており、バウチャーの一括生成やエクスポートが可能です。バウチャーは口座残高の補充に利用できます。</li>
+<li>**チャンネル管理**に対応し、チャンネルの一括作成が可能。</li>
+<li>グループごとに異なるレートを設定するための**ユーザーグループ**と**チャンネルグループ**をサポートしています。</li>
+<li>チャンネル**モデルリスト設定**に対応。</li>
+<li>**クォータ詳細チェック**をサポート。</li>
+<li>**ユーザー招待報酬**をサポートします。</li>
+<li>米ドルでの残高表示が可能。</li>
+<li>新規ユーザー向けのお知らせ公開、リチャージリンク設定、初期残高設定に対応。</li>
+<li>豊富な**カスタマイズ**オプションを提供します:<ol>
+<li>システム名、ロゴ、フッターのカスタマイズが可能。</li>
+<li>HTML と Markdown コードを使用したホームページとアバウトページのカスタマイズ、または iframe を介したスタンドアロンウェブページの埋め込みをサポートしています。</li>
+</ol>
+</li>
+<li>システム・アクセストークンによる管理 API アクセスをサポートする。</li>
+<li>Cloudflare Turnstile によるユーザー認証に対応。</li>
+<li>ユーザー管理と複数のユーザーログイン/登録方法をサポート:<ul>
+<li>電子メールによるログイン/登録とパスワードリセット。</li>
+<li><a href="https://github.com/settings/applications/new">GitHub OAuth</a>。</li>
+<li>WeChat 公式アカウントの認証（<a href="https://github.com/songquanpeng/wechat-server">WeChat Server</a>の追加導入が必要）。</li>
+</ul>
+</li>
+<li>他の主要なモデル API が利用可能になった場合、即座にサポートし、カプセル化する。</li>
+</ol>
+<h2 id="_2">デプロイメント<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="docker">Docker デプロイメント<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>デプロイコマンド: <code>docker run --name one-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/one-api:/data justsong/one-api-en</code>。</p>
+<p>コマンドを更新する: <code>docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrr/watchtower -cR</code>。</p>
+<p><code>-p 3000:3000</code> の最初の <code>3000</code> はホストのポートで、必要に応じて変更できます。</p>
+<p>データはホストの <code>/home/ubuntu/data/one-api</code> ディレクトリに保存される。このディレクトリが存在し、書き込み権限があることを確認する、もしくは適切なディレクトリに変更してください。</p>
+<p>Nginxリファレンス設定:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>server{
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   server_name openai.justsong.cn;  # ドメイン名は適宜変更
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   location / {
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>          client_max_body_size  64m;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>          proxy_http_version 1.1;
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>          proxy_pass http://localhost:3000;  # それに応じてポートを変更
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>          proxy_set_header Host $host;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>          proxy_set_header X-Forwarded-For $remote_addr;
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>          proxy_cache_bypass $http_upgrade;
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>          proxy_set_header Accept-Encoding gzip;
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>          proxy_read_timeout 300s;  # GPT-4 はより長いタイムアウトが必要
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>   }
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>}
+</span></code></pre></div></p>
+<p>次に、Let's Encrypt certbot を使って HTTPS を設定します:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Ubuntu に certbot をインストール:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>--classic<span class="w"> </span>certbot
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/snap/bin/certbot<span class="w"> </span>/usr/bin/certbot
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># 証明書の生成と Nginx 設定の変更</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># プロンプトに従う</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Nginx を再起動</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>sudo<span class="w"> </span>service<span class="w"> </span>nginx<span class="w"> </span>restart
+</span></code></pre></div></p>
+<p>初期アカウントのユーザー名は <code>root</code> で、パスワードは <code>123456</code> です。</p>
+<h3 id="_3">マニュアルデプロイ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="https://github.com/songquanpeng/one-api/releases/latest">GitHub Releases</a> から実行ファイルをダウンロードする、もしくはソースからコンパイルする:
+   <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/songquanpeng/one-api.git
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># フロントエンドのビルド</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">cd</span><span class="w"> </span>one-api/web/default
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>npm<span class="w"> </span>install
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># バックエンドのビルド</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">cd</span><span class="w"> </span>../..
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>go<span class="w"> </span>mod<span class="w"> </span>download
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>go<span class="w"> </span>build<span class="w"> </span>-ldflags<span class="w"> </span><span class="s2">&quot;-s -w&quot;</span><span class="w"> </span>-o<span class="w"> </span>one-api
+</span></code></pre></div></li>
+<li>実行:
+   <div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>one-api
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>./one-api<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span><span class="w"> </span>--log-dir<span class="w"> </span>./logs
+</span></code></pre></div></li>
+<li><a href="http://localhost:3000/">http://localhost:3000/</a> にアクセスし、ログインする。初期アカウントのユーザー名は <code>root</code>、パスワードは <code>123456</code> である。</li>
+</ol>
+<p>より詳細なデプロイのチュートリアルについては、<a href="https://iamazing.cn/page/how-to-deploy-a-website">このページ</a> を参照してください。</p>
+<h3 id="_4">マルチマシンデプロイ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>すべてのサーバに同じ <code>SESSION_SECRET</code> を設定する。</li>
+<li><code>SQL_DSN</code> を設定し、SQLite の代わりに MySQL を使用する。すべてのサーバは同じデータベースに接続する。</li>
+<li>マスターノード以外のノードの <code>NODE_TYPE</code> を <code>slave</code> に設定する。</li>
+<li>データベースから定期的に設定を同期するサーバーには <code>SYNC_FREQUENCY</code> を設定する。</li>
+<li>マスター以外のノードでは、オプションで <code>FRONTEND_BASE_URL</code> を設定して、ページ要求をマスターサーバーにリダイレクトすることができます。</li>
+<li>マスター以外のノードには Redis を個別にインストールし、<code>REDIS_CONN_STRING</code> を設定して、キャッシュの有効期限が切れていないときにデータベースにゼロレイテンシーでアクセスできるようにする。</li>
+<li>メインサーバーでもデータベースへのアクセスが高レイテンシになる場合は、Redis を有効にし、<code>SYNC_FREQUENCY</code> を設定してデータベースから定期的に設定を同期する必要がある。</li>
+</ol>
+<p>Please refer to the <a href="#environment-variables">environment variables</a> section for details on using environment variables.</p>
+<h3 id="baota">コントロールパネル（例: Baota）への展開<a class="headerlink" href="#baota" title="Permanent link">&para;</a></h3>
+<p>詳しい手順は <a href="https://github.com/songquanpeng/one-api/issues/175">#175</a> を参照してください。</p>
+<p>配置後に空白のページが表示される場合は、<a href="https://github.com/songquanpeng/one-api/issues/97">#97</a> を参照してください。</p>
+<h3 id="_5">サードパーティプラットフォームへのデプロイ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<details>
+<summary><strong>Sealos へのデプロイ</strong></summary>
+<div>
+
+> Sealos は、高い同時実行性、ダイナミックなスケーリング、数百万人のユーザーに対する安定した運用をサポートしています。
+
+> 下のボタンをクリックすると、ワンクリックで展開できます。👇
+
+[![](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=one-api)
+
+
+</div>
+</details>
+
+<details>
+<summary><strong>Zeabur へのデプロイ</strong></summary>
+<div>
+
+> Zeabur のサーバーは海外にあるため、ネットワークの問題は自動的に解決されます。
+
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/7Q0KO3)
+
+1. まず、コードをフォークする。
+2. [Zeabur](https://zeabur.com?referralCode=songquanpeng) にアクセスしてログインし、コンソールに入る。
+3. 新しいプロジェクトを作成します。Service -> Add ServiceでMarketplace を選択し、MySQL を選択する。接続パラメータ（ユーザー名、パスワード、アドレス、ポート）をメモします。
+4. 接続パラメータをコピーし、```create database `one-api` ``` を実行してデータベースを作成する。
+5. その後、Service -> Add Service で Git を選択し（最初の使用には認証が必要です）、フォークしたリポジトリを選択します。
+6. 自動デプロイが開始されますが、一旦キャンセルしてください。Variable タブで `PORT` に `3000` を追加し、`SQL_DSN` に `<username>:<password>@tcp(<addr>:<port>)/one-api` を追加します。変更を保存する。SQL_DSN` が設定されていないと、データが永続化されず、再デプロイ後にデータが失われるので注意すること。
+7. 再デプロイを選択します。
+8. Domains タブで、"my-one-api" のような適切なドメイン名の接頭辞を選択する。最終的なドメイン名は "my-one-api.zeabur.app" となります。独自のドメイン名を CNAME することもできます。
+9. デプロイが完了するのを待ち、生成されたドメイン名をクリックして One API にアクセスします。
+
+</div>
+</details>
+
+<h2 id="_6">コンフィグ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>システムは箱から出してすぐに使えます。</p>
+<p>環境変数やコマンドラインパラメータを設定することで、システムを構成することができます。</p>
+<p>システム起動後、<code>root</code> ユーザーとしてログインし、さらにシステムを設定します。</p>
+<h2 id="_7">使用方法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><code>Channels</code> ページで API Key を追加し、<code>Tokens</code> ページでアクセストークンを追加する。</p>
+<p>アクセストークンを使って One API にアクセスすることができる。使い方は <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> と同じです。</p>
+<p>OpenAI API が使用されている場所では、API Base に One API のデプロイアドレスを設定することを忘れないでください（例: <code>https://openai.justsong.cn</code>）。API Key は One API で生成されたトークンでなければなりません。</p>
+<p>具体的な API Base のフォーマットは、使用しているクライアントに依存することに注意してください。</p>
+<pre class="mermaid"><code>graph LR
+    A(ユーザ)
+    A ---&gt;|リクエスト| B(One API)
+    B --&gt;|中継リクエスト| C(OpenAI)
+    B --&gt;|中継リクエスト| D(Azure)
+    B --&gt;|中継リクエスト| E(その他のダウンストリームチャンネル)</code></pre>
+<p>現在のリクエストにどのチャネルを使うかを指定するには、トークンの後に チャネル ID を追加します： 例えば、<code>Authorization: Bearer ONE_API_KEY-CHANNEL_ID</code> のようにします。
+チャンネル ID を指定するためには、トークンは管理者によって作成される必要があることに注意してください。</p>
+<p>もしチャネル ID が指定されない場合、ロードバランシングによってリクエストが複数のチャネルに振り分けられます。</p>
+<h3 id="_8">環境変数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>REDIS_CONN_STRING</code>: 設定すると、リクエストレート制限のためのストレージとして、メモリの代わりに Redis が使われる。<ul>
+<li>例: <code>REDIS_CONN_STRING=redis://default:redispw@localhost:49153</code></li>
+</ul>
+</li>
+<li><code>SESSION_SECRET</code>: 設定すると、固定セッションキーが使用され、システムの再起動後もログインユーザーのクッキーが有効であることが保証されます。<ul>
+<li>例: <code>SESSION_SECRET=random_string</code></li>
+</ul>
+</li>
+<li><code>SQL_DSN</code>: 設定すると、SQLite の代わりに指定したデータベースが使用されます。MySQL バージョン 8.0 を使用してください。<ul>
+<li>例: <code>SQL_DSN=root:123456@tcp(localhost:3306)/oneapi</code></li>
+</ul>
+</li>
+<li><code>LOG_SQL_DSN</code>: を設定すると、<code>logs</code>テーブルには独立したデータベースが使用されます。MySQLまたはPostgreSQLを使用してください。</li>
+<li><code>FRONTEND_BASE_URL</code>: 設定されると、バックエンドアドレスではなく、指定されたフロントエンドアドレスが使われる。<ul>
+<li>例: <code>FRONTEND_BASE_URL=https://openai.justsong.cn</code></li>
+</ul>
+</li>
+<li><code>SYNC_FREQUENCY</code>: 設定された場合、システムは定期的にデータベースからコンフィグを秒単位で同期する。設定されていない場合、同期は行われません。<ul>
+<li>例: <code>SYNC_FREQUENCY=60</code></li>
+</ul>
+</li>
+<li><code>NODE_TYPE</code>: 設定すると、ノードのタイプを指定する。有効な値は <code>master</code> と <code>slave</code> である。設定されていない場合、デフォルトは <code>master</code>。<ul>
+<li>例: <code>NODE_TYPE=slave</code></li>
+</ul>
+</li>
+<li><code>CHANNEL_UPDATE_FREQUENCY</code>: 設定すると、チャンネル残高を分単位で定期的に更新する。設定されていない場合、更新は行われません。<ul>
+<li>例: <code>CHANNEL_UPDATE_FREQUENCY=1440</code></li>
+</ul>
+</li>
+<li><code>CHANNEL_TEST_FREQUENCY</code>: 設定すると、チャンネルを定期的にテストする。設定されていない場合、テストは行われません。<ul>
+<li>例: <code>CHANNEL_TEST_FREQUENCY=1440</code></li>
+</ul>
+</li>
+<li><code>POLLING_INTERVAL</code>: チャネル残高の更新とチャネルの可用性をテストするときのリクエスト間の時間間隔 (秒)。デフォルトは間隔なし。<ul>
+<li>例: <code>POLLING_INTERVAL=5</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="_9">コマンドラインパラメータ<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>--port &lt;port_number&gt;</code>: サーバがリッスンするポート番号を指定。デフォルトは <code>3000</code> です。<ul>
+<li>例: <code>--port 3000</code></li>
+</ul>
+</li>
+<li><code>--log-dir &lt;log_dir&gt;</code>: ログディレクトリを指定。設定しない場合、ログは保存されません。<ul>
+<li>例: <code>--log-dir ./logs</code></li>
+</ul>
+</li>
+<li><code>--version</code>: システムのバージョン番号を表示して終了する。</li>
+<li><code>--help</code>: コマンドの使用法ヘルプとパラメータの説明を表示。</li>
+</ol>
+<h2 id="_10">スクリーンショット<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p><img alt="channel" src="https://user-images.githubusercontent.com/39998050/233837954-ae6683aa-5c4f-429f-a949-6645a83c9490.png" />
+<img alt="token" src="https://user-images.githubusercontent.com/39998050/233837971-dab488b7-6d96-43af-b640-a168e8d1c9bf.png" /></p>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<ol>
+<li>ノルマとは何か？どのように計算されますか？One API にはノルマ計算の問題はありますか？<ul>
+<li>ノルマ = グループ倍率 * モデル倍率 * (プロンプトトークンの数 + 完了トークンの数 * 完了倍率)</li>
+<li>完了倍率は、公式の定義と一致するように、GPT3.5 では 1.33、GPT4 では 2 に固定されています。</li>
+<li>ストリームモードでない場合、公式 API は消費したトークンの総数を返す。ただし、プロンプトとコンプリートの消費倍率は異なるので注意してください。</li>
+</ul>
+</li>
+<li>アカウント残高は十分なのに、"insufficient quota" と表示されるのはなぜですか？<ul>
+<li>トークンのクォータが十分かどうかご確認ください。トークンクォータはアカウント残高とは別のものです。</li>
+<li>トークンクォータは最大使用量を設定するためのもので、ユーザーが自由に設定できます。</li>
+</ul>
+</li>
+<li>チャンネルを使おうとすると "No available channels" と表示されます。どうすればいいですか？<ul>
+<li>ユーザーとチャンネルグループの設定を確認してください。</li>
+<li>チャンネルモデルの設定も確認してください。</li>
+</ul>
+</li>
+<li>チャンネルテストがエラーを報告する: "invalid character '&lt;' looking for beginning of value"<ul>
+<li>このエラーは、返された値が有効な JSON ではなく、HTML ページである場合に発生する。</li>
+<li>ほとんどの場合、デプロイサイトのIPかプロキシのノードが CloudFlare によってブロックされています。</li>
+</ul>
+</li>
+<li>ChatGPT Next Web でエラーが発生しました: "Failed to fetch"<ul>
+<li>デプロイ時に <code>BASE_URL</code> を設定しないでください。</li>
+<li>インターフェイスアドレスと API Key が正しいか再確認してください。</li>
+</ul>
+</li>
+</ol>
+<h2 id="_11">関連プロジェクト<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/labring/FastGPT">FastGPT</a>: LLM に基づく知識質問応答システム</p>
+<h2 id="_12">注<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>本プロジェクトはオープンソースプロジェクトです。OpenAI の<a href="https://openai.com/policies/terms-of-use">利用規約</a>および**適用される法令**を遵守してご利用ください。違法な目的での利用はご遠慮ください。</p>
+<p>このプロジェクトは MIT ライセンスで公開されています。これに基づき、ページの最下部に帰属表示と本プロジェクトへのリンクを含める必要があります。</p>
+<p>このプロジェクトを基にした派生プロジェクトについても同様です。</p>
+<p>帰属表示を含めたくない場合は、事前に許可を得なければなりません。</p>
+<p>MIT ライセンスによると、このプロジェクトを利用するリスクと責任は利用者が負うべきであり、このオープンソースプロジェクトの開発者は責任を負いません。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../zh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 中文">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                中文
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-2024 OneAPI Group. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>

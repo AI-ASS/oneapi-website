@@ -1,0 +1,1511 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Access all LLM through the standard OpenAI API format, easy to deploy & use">
+      
+      
+        <meta name="author" content="OneAPI Group">
+      
+      
+      
+        <link rel="prev" href="../en/">
+      
+      
+        <link rel="next" href="../ja/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
+    
+    
+      
+        <title>中文 - OneAPI Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OneAPI Docs" class="md-header__button md-logo" aria-label="OneAPI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OneAPI Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              中文
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/songquanpeng/one-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    songquanpeng/one-api
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../en/" class="md-tabs__link">
+          
+  
+    
+  
+  README
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OneAPI Docs" class="md-nav__button md-logo" aria-label="OneAPI Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OneAPI Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/songquanpeng/one-api" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    songquanpeng/one-api
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    README
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            README
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    English
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    中文
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    中文
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      功能
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于 Docker 进行部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于 Docker Compose 进行部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多机部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      宝塔部署教程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署第三方服务配合 One API 使用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署第三方服务配合 One API 使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-next-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChatGPT Next Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChatGPT Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qchatgpt-qq" class="md-nav__link">
+    <span class="md-ellipsis">
+      QChatGPT - QQ机器人
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署到第三方平台
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令行参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      演示
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="演示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      在线演示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      截图展示
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      相关项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ja/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    日本語
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      功能
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于 Docker 进行部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于 Docker Compose 进行部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      手动部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多机部署
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      宝塔部署教程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署第三方服务配合 One API 使用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部署第三方服务配合 One API 使用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-next-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChatGPT Next Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      ChatGPT Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qchatgpt-qq" class="md-nav__link">
+    <span class="md-ellipsis">
+      QChatGPT - QQ机器人
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      部署到第三方平台
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令行参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      演示
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="演示">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      在线演示
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      截图展示
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      相关项目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/songquanpeng/oneapi-pro/tree/website/docs/zh.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/songquanpeng/oneapi-pro/tree/website/docs/zh.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+  <h1>中文</h1>
+
+<p align="right">
+   <strong>中文</strong> | <a href="./README.en.md">English</a> | <a href="./README.ja.md">日本語</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/songquanpeng/one-api"><img src="https://raw.githubusercontent.com/songquanpeng/one-api/main/web/default/public/logo.png" width="150" height="150" alt="one-api logo"></a>
+</p>
+
+<div align="center">
+
+# One API
+
+_✨ 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用 ✨_
+
+</div>
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/songquanpeng/one-api/main/LICENSE">
+    <img src="https://img.shields.io/github/license/songquanpeng/one-api?color=brightgreen" alt="license">
+  </a>
+  <a href="https://github.com/songquanpeng/one-api/releases/latest">
+    <img src="https://img.shields.io/github/v/release/songquanpeng/one-api?color=brightgreen&include_prereleases" alt="release">
+  </a>
+  <a href="https://hub.docker.com/repository/docker/justsong/one-api">
+    <img src="https://img.shields.io/docker/pulls/justsong/one-api?color=brightgreen" alt="docker pull">
+  </a>
+  <a href="https://github.com/songquanpeng/one-api/releases/latest">
+    <img src="https://img.shields.io/github/downloads/songquanpeng/one-api/total?color=brightgreen&include_prereleases" alt="release">
+  </a>
+  <a href="https://goreportcard.com/report/github.com/songquanpeng/one-api">
+    <img src="https://goreportcard.com/badge/github.com/songquanpeng/one-api" alt="GoReportCard">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/songquanpeng/one-api#部署">部署教程</a>
+  ·
+  <a href="https://github.com/songquanpeng/one-api#使用方法">使用方法</a>
+  ·
+  <a href="https://github.com/songquanpeng/one-api/issues">意见反馈</a>
+  ·
+  <a href="https://github.com/songquanpeng/one-api#截图展示">截图展示</a>
+  ·
+  <a href="https://openai.justsong.cn/">在线演示</a>
+  ·
+  <a href="https://github.com/songquanpeng/one-api#常见问题">常见问题</a>
+  ·
+  <a href="https://github.com/songquanpeng/one-api#相关项目">相关项目</a>
+  ·
+  <a href="https://iamazing.cn/page/reward">赞赏支持</a>
+</p>
+
+<blockquote>
+<p>[!NOTE]
+本项目为开源项目，使用者必须在遵循 OpenAI 的<a href="https://openai.com/policies/terms-of-use">使用条款</a>以及**法律法规**的情况下使用，不得用于非法用途。</p>
+<p>根据<a href="http://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm">《生成式人工智能服务管理暂行办法》</a>的要求，请勿对中国地区公众提供一切未经备案的生成式人工智能服务。</p>
+<p>[!WARNING]
+使用 Docker 拉取的最新镜像可能是 <code>alpha</code> 版本，如果追求稳定性请手动指定版本。</p>
+<p>[!WARNING]
+使用 root 用户初次登录系统后，务必修改默认密码 <code>123456</code>！</p>
+</blockquote>
+<h2 id="_1">功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol class="task-list">
+<li>支持多种大模型：</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://platform.openai.com/docs/guides/gpt/chat-completions-api">OpenAI ChatGPT 系列模型</a>（支持 <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/reference">Azure OpenAI API</a>）</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://anthropic.com">Anthropic Claude 系列模型</a> (支持 AWS Claude)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://developers.generativeai.google">Google PaLM2/Gemini 系列模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://mistral.ai/">Mistral 系列模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://console.volcengine.com/ark/region:ark+cn-beijing/model">字节跳动豆包大模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://cloud.baidu.com/doc/WENXINWORKSHOP/index.html">百度文心一言系列模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://help.aliyun.com/document_detail/2400395.html">阿里通义千问系列模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.xfyun.cn/doc/spark/Web.html">讯飞星火认知大模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://bigmodel.cn">智谱 ChatGLM 系列模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://ai.360.cn">360 智脑</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://cloud.tencent.com/document/product/1729">腾讯混元大模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://platform.moonshot.cn/">Moonshot AI</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://platform.baichuan-ai.com">百川大模型</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://api.minimax.chat/">MINIMAX</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://wow.groq.com/">Groq</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://github.com/ollama/ollama">Ollama</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://platform.lingyiwanwu.com/">零一万物</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://platform.stepfun.com/">阶跃星辰</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.coze.com/">Coze</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://cohere.com/">Cohere</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.deepseek.com/">DeepSeek</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://developers.cloudflare.com/workers-ai/">Cloudflare Workers AI</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.deepl.com/">DeepL</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.together.ai/">together.ai</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://www.novita.ai/">novita.ai</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="https://siliconflow.cn/siliconcloud">硅基流动 SiliconCloud</a></li>
+<li>支持配置镜像以及众多<a href="https://iamazing.cn/page/openai-api-third-party-services">第三方代理服务</a>。</li>
+<li>支持通过**负载均衡**的方式访问多个渠道。</li>
+<li>支持 <strong>stream 模式</strong>，可以通过流式传输实现打字机效果。</li>
+<li>支持**多机部署**，<a href="#多机部署">详见此处</a>。</li>
+<li>支持**令牌管理**，设置令牌的过期时间、额度、允许的 IP 范围以及允许的模型访问。</li>
+<li>支持**兑换码管理**，支持批量生成和导出兑换码，可使用兑换码为账户进行充值。</li>
+<li>支持**渠道管理**，批量创建渠道。</li>
+<li>支持**用户分组**以及**渠道分组**，支持为不同分组设置不同的倍率。</li>
+<li>支持渠道**设置模型列表**。</li>
+<li>支持**查看额度明细**。</li>
+<li>支持**用户邀请奖励**。</li>
+<li>支持以美元为单位显示额度。</li>
+<li>支持发布公告，设置充值链接，设置新用户初始额度。</li>
+<li>支持模型映射，重定向用户的请求模型，如无必要请不要设置，设置之后会导致请求体被重新构造而非直接透传，会导致部分还未正式支持的字段无法传递成功。</li>
+<li>支持失败自动重试。</li>
+<li>支持绘图接口。</li>
+<li>支持 <a href="https://developers.cloudflare.com/ai-gateway/providers/openai/">Cloudflare AI Gateway</a>，渠道设置的代理部分填写 <code>https://gateway.ai.cloudflare.com/v1/ACCOUNT_TAG/GATEWAY/openai</code> 即可。</li>
+<li>支持丰富的**自定义**设置，<ol>
+<li>支持自定义系统名称，logo 以及页脚。</li>
+<li>支持自定义首页和关于页面，可以选择使用 HTML &amp; Markdown 代码进行自定义，或者使用一个单独的网页通过 iframe 嵌入。</li>
+</ol>
+</li>
+<li>支持通过系统访问令牌调用管理 API，进而**在无需二开的情况下扩展和自定义** One API 的功能，详情请参考此处 <a href="./docs/API.md">API 文档</a>。。</li>
+<li>支持 Cloudflare Turnstile 用户校验。</li>
+<li>支持用户管理，支持**多种用户登录注册方式**：<ul>
+<li>邮箱登录注册（支持注册邮箱白名单）以及通过邮箱进行密码重置。</li>
+<li>支持使用飞书进行授权登录。</li>
+<li><a href="https://github.com/settings/applications/new">GitHub 开放授权</a>。</li>
+<li>微信公众号授权（需要额外部署 <a href="https://github.com/songquanpeng/wechat-server">WeChat Server</a>）。</li>
+</ul>
+</li>
+<li>支持主题切换，设置环境变量 <code>THEME</code> 即可，默认为 <code>default</code>，欢迎 PR 更多主题，具体参考<a href="./web/README.md">此处</a>。</li>
+<li>配合 <a href="https://github.com/songquanpeng/message-pusher">Message Pusher</a> 可将报警信息推送到多种 App 上。</li>
+</ol>
+<h2 id="_2">部署<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="docker">基于 Docker 进行部署<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 使用 SQLite 的部署命令：</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>one-api<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>-v<span class="w"> </span>/home/ubuntu/data/one-api:/data<span class="w"> </span>justsong/one-api
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 使用 MySQL 的部署命令，在上面的基础上添加 `-e SQL_DSN=&quot;root:123456@tcp(localhost:3306)/oneapi&quot;`，请自行修改数据库连接参数，不清楚如何修改请参见下面环境变量一节。</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 例如：</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>one-api<span class="w"> </span>-d<span class="w"> </span>--restart<span class="w"> </span>always<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>-e<span class="w"> </span><span class="nv">SQL_DSN</span><span class="o">=</span><span class="s2">&quot;root:123456@tcp(localhost:3306)/oneapi&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai<span class="w"> </span>-v<span class="w"> </span>/home/ubuntu/data/one-api:/data<span class="w"> </span>justsong/one-api
+</span></code></pre></div>
+<p>其中，<code>-p 3000:3000</code> 中的第一个 <code>3000</code> 是宿主机的端口，可以根据需要进行修改。</p>
+<p>数据和日志将会保存在宿主机的 <code>/home/ubuntu/data/one-api</code> 目录，请确保该目录存在且具有写入权限，或者更改为合适的目录。</p>
+<p>如果启动失败，请添加 <code>--privileged=true</code>，具体参考 <a href="https://github.com/songquanpeng/one-api/issues/482">https://github.com/songquanpeng/one-api/issues/482</a> 。</p>
+<p>如果上面的镜像无法拉取，可以尝试使用 GitHub 的 Docker 镜像，将上面的 <code>justsong/one-api</code> 替换为 <code>ghcr.io/songquanpeng/one-api</code> 即可。</p>
+<p>如果你的并发量较大，**务必**设置 <code>SQL_DSN</code>，详见下面<a href="#环境变量">环境变量</a>一节。</p>
+<p>更新命令：<code>docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower -cR</code></p>
+<p>Nginx 的参考配置：
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>server{
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   server_name openai.justsong.cn;  # 请根据实际情况修改你的域名
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   location / {
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>          client_max_body_size  64m;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>          proxy_http_version 1.1;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>          proxy_pass http://localhost:3000;  # 请根据实际情况修改你的端口
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>          proxy_set_header Host $host;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>          proxy_set_header X-Forwarded-For $remote_addr;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>          proxy_cache_bypass $http_upgrade;
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>          proxy_set_header Accept-Encoding gzip;
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>          proxy_read_timeout 300s;  # GPT-4 需要较长的超时时间，请自行调整
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>   }
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>}
+</span></code></pre></div></p>
+<p>之后使用 Let's Encrypt 的 certbot 配置 HTTPS：
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Ubuntu 安装 certbot：</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>snap<span class="w"> </span>install<span class="w"> </span>--classic<span class="w"> </span>certbot
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/snap/bin/certbot<span class="w"> </span>/usr/bin/certbot
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 生成证书 &amp; 修改 Nginx 配置</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 根据指示进行操作</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 重启 Nginx</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>sudo<span class="w"> </span>service<span class="w"> </span>nginx<span class="w"> </span>restart
+</span></code></pre></div></p>
+<p>初始账号用户名为 <code>root</code>，密码为 <code>123456</code>。</p>
+<h3 id="docker-compose">基于 Docker Compose 进行部署<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>仅启动方式不同，参数设置不变，请参考基于 Docker 部署部分</p>
+</blockquote>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 目前支持 MySQL 启动，数据存储在 ./data/mysql 文件夹内</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 查看部署状态</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>docker-compose<span class="w"> </span>ps
+</span></code></pre></div>
+<h3 id="_3">手动部署<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>从 <a href="https://github.com/songquanpeng/one-api/releases/latest">GitHub Releases</a> 下载可执行文件或者从源码编译：
+   ```shell
+   git clone <a href="https://github.com/songquanpeng/one-api.git">https://github.com/songquanpeng/one-api.git</a></li>
+</ol>
+<p># 构建前端
+   cd one-api/web/default
+   npm install
+   npm run build</p>
+<p># 构建后端
+   cd ../..
+   go mod download
+   go build -ldflags "-s -w" -o one-api
+   <code>```
+2. 运行：
+   <div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>one-api
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./one-api<span class="w"> </span>--port<span class="w"> </span><span class="m">3000</span><span class="w"> </span>--log-dir<span class="w"> </span>./logs
+</span></code></pre></div>
+3. 访问 [http://localhost:3000/](http://localhost:3000/) 并登录。初始账号用户名为</code>root<code>，密码为</code>123456`。</p>
+<p>更加详细的部署教程<a href="https://iamazing.cn/page/how-to-deploy-a-website">参见此处</a>。</p>
+<h3 id="_4">多机部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>所有服务器 <code>SESSION_SECRET</code> 设置一样的值。</li>
+<li>必须设置 <code>SQL_DSN</code>，使用 MySQL 数据库而非 SQLite，所有服务器连接同一个数据库。</li>
+<li>所有从服务器必须设置 <code>NODE_TYPE</code> 为 <code>slave</code>，不设置则默认为主服务器。</li>
+<li>设置 <code>SYNC_FREQUENCY</code> 后服务器将定期从数据库同步配置，在使用远程数据库的情况下，推荐设置该项并启用 Redis，无论主从。</li>
+<li>从服务器可以选择设置 <code>FRONTEND_BASE_URL</code>，以重定向页面请求到主服务器。</li>
+<li>从服务器上**分别**装好 Redis，设置好 <code>REDIS_CONN_STRING</code>，这样可以做到在缓存未过期的情况下数据库零访问，可以减少延迟。</li>
+<li>如果主服务器访问数据库延迟也比较高，则也需要启用 Redis，并设置 <code>SYNC_FREQUENCY</code>，以定期从数据库同步配置。</li>
+</ol>
+<p>环境变量的具体使用方法详见<a href="#环境变量">此处</a>。</p>
+<h3 id="_5">宝塔部署教程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>详见 <a href="https://github.com/songquanpeng/one-api/issues/175">#175</a>。</p>
+<p>如果部署后访问出现空白页面，详见 <a href="https://github.com/songquanpeng/one-api/issues/97">#97</a>。</p>
+<h3 id="one-api">部署第三方服务配合 One API 使用<a class="headerlink" href="#one-api" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>欢迎 PR 添加更多示例。</p>
+</blockquote>
+<h4 id="chatgpt-next-web">ChatGPT Next Web<a class="headerlink" href="#chatgpt-next-web" title="Permanent link">&para;</a></h4>
+<p>项目主页：<a href="https://github.com/Yidadaa/ChatGPT-Next-Web">https://github.com/Yidadaa/ChatGPT-Next-Web</a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>chat-next-web<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3001</span>:3000<span class="w"> </span>yidadaa/chatgpt-next-web
+</span></code></pre></div>
+<p>注意修改端口号，之后在页面上设置接口地址（例如：<a href="https://openai.justsong.cn/">https://openai.justsong.cn/</a> ）和 API Key 即可。</p>
+<h4 id="chatgpt-web">ChatGPT Web<a class="headerlink" href="#chatgpt-web" title="Permanent link">&para;</a></h4>
+<p>项目主页：<a href="https://github.com/Chanzhaoyu/chatgpt-web">https://github.com/Chanzhaoyu/chatgpt-web</a></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>chatgpt-web<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">3002</span>:3002<span class="w"> </span>-e<span class="w"> </span><span class="nv">OPENAI_API_BASE_URL</span><span class="o">=</span>https://openai.justsong.cn<span class="w"> </span>-e<span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span>sk-xxx<span class="w"> </span>chenzhaoyu94/chatgpt-web
+</span></code></pre></div>
+<p>注意修改端口号、<code>OPENAI_API_BASE_URL</code> 和 <code>OPENAI_API_KEY</code>。</p>
+<h4 id="qchatgpt-qq">QChatGPT - QQ机器人<a class="headerlink" href="#qchatgpt-qq" title="Permanent link">&para;</a></h4>
+<p>项目主页：<a href="https://github.com/RockChinQ/QChatGPT">https://github.com/RockChinQ/QChatGPT</a></p>
+<p>根据<a href="https://qchatgpt.rockchin.top">文档</a>完成部署后，在 <code>data/provider.json</code>设置<code>requester.openai-chat-completions.base-url</code>为 One API 实例地址，并填写 API Key 到 <code>keys.openai</code> 组中，设置 <code>model</code> 为要使用的模型名称。</p>
+<p>运行期间可以通过<code>!model</code>命令查看、切换可用模型。</p>
+<h3 id="_6">部署到第三方平台<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<details>
+<summary><strong>部署到 Sealos </strong></summary>
+<div>
+
+> Sealos 的服务器在国外，不需要额外处理网络问题，支持高并发 & 动态伸缩。
+
+点击以下按钮一键部署（部署后访问出现 404 请等待 3~5 分钟）：
+
+[![Deploy-on-Sealos.svg](https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg)](https://cloud.sealos.io/?openapp=system-fastdeploy?templateName=one-api)
+
+</div>
+</details>
+
+<details>
+<summary><strong>部署到 Zeabur</strong></summary>
+<div>
+
+> Zeabur 的服务器在国外，自动解决了网络的问题，同时免费的额度也足够个人使用
+
+[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/7Q0KO3)
+
+1. 首先 fork 一份代码。
+2. 进入 [Zeabur](https://zeabur.com?referralCode=songquanpeng)，登录，进入控制台。
+3. 新建一个 Project，在 Service -> Add Service 选择 Marketplace，选择 MySQL，并记下连接参数（用户名、密码、地址、端口）。
+4. 复制链接参数，运行 ```create database `one-api` ``` 创建数据库。
+5. 然后在 Service -> Add Service，选择 Git（第一次使用需要先授权），选择你 fork 的仓库。
+6. Deploy 会自动开始，先取消。进入下方 Variable，添加一个 `PORT`，值为 `3000`，再添加一个 `SQL_DSN`，值为 `<username>:<password>@tcp(<addr>:<port>)/one-api` ，然后保存。 注意如果不填写 `SQL_DSN`，数据将无法持久化，重新部署后数据会丢失。
+7. 选择 Redeploy。
+8. 进入下方 Domains，选择一个合适的域名前缀，如 "my-one-api"，最终域名为 "my-one-api.zeabur.app"，也可以 CNAME 自己的域名。
+9. 等待部署完成，点击生成的域名进入 One API。
+
+</div>
+</details>
+
+<details>
+<summary><strong>部署到 Render</strong></summary>
+<div>
+
+> Render 提供免费额度，绑卡后可以进一步提升额度
+
+Render 可以直接部署 docker 镜像，不需要 fork 仓库：https://dashboard.render.com
+
+</div>
+</details>
+
+<h2 id="_7">配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>系统本身开箱即用。</p>
+<p>你可以通过设置环境变量或者命令行参数进行配置。</p>
+<p>等到系统启动后，使用 <code>root</code> 用户登录系统并做进一步的配置。</p>
+<p><strong>Note</strong>：如果你不知道某个配置项的含义，可以临时删掉值以看到进一步的提示文字。</p>
+<h2 id="_8">使用方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>在<code>渠道</code>页面中添加你的 API Key，之后在<code>令牌</code>页面中新增访问令牌。</p>
+<p>之后就可以使用你的令牌访问 One API 了，使用方式与 <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a> 一致。</p>
+<p>你需要在各种用到 OpenAI API 的地方设置 API Base 为你的 One API 的部署地址，例如：<code>https://openai.justsong.cn</code>，API Key 则为你在 One API 中生成的令牌。</p>
+<p>注意，具体的 API Base 的格式取决于你所使用的客户端。</p>
+<p>例如对于 OpenAI 的官方库：
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;sk-xxxxxx&quot;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">OPENAI_API_BASE</span><span class="o">=</span><span class="s2">&quot;https://&lt;HOST&gt;:&lt;PORT&gt;/v1&quot;</span>
+</span></code></pre></div></p>
+<pre class="mermaid"><code>graph LR
+    A(用户)
+    A ---&gt;|使用 One API 分发的 key 进行请求| B(One API)
+    B --&gt;|中继请求| C(OpenAI)
+    B --&gt;|中继请求| D(Azure)
+    B --&gt;|中继请求| E(其他 OpenAI API 格式下游渠道)
+    B --&gt;|中继并修改请求体和返回体| F(非 OpenAI API 格式下游渠道)</code></pre>
+<p>可以通过在令牌后面添加渠道 ID 的方式指定使用哪一个渠道处理本次请求，例如：<code>Authorization: Bearer ONE_API_KEY-CHANNEL_ID</code>。
+注意，需要是管理员用户创建的令牌才能指定渠道 ID。</p>
+<p>不加的话将会使用负载均衡的方式使用多个渠道。</p>
+<h3 id="_9">环境变量<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>One API 支持从 <code>.env</code> 文件中读取环境变量，请参照 <code>.env.example</code> 文件，使用时请将其重命名为 <code>.env</code>。
+1. <code>REDIS_CONN_STRING</code>：设置之后将使用 Redis 作为缓存使用。
+   + 例子：<code>REDIS_CONN_STRING=redis://default:redispw@localhost:49153</code>
+   + 如果数据库访问延迟很低，没有必要启用 Redis，启用后反而会出现数据滞后的问题。
+2. <code>SESSION_SECRET</code>：设置之后将使用固定的会话密钥，这样系统重新启动后已登录用户的 cookie 将依旧有效。
+   + 例子：<code>SESSION_SECRET=random_string</code>
+3. <code>SQL_DSN</code>：设置之后将使用指定数据库而非 SQLite，请使用 MySQL 或 PostgreSQL。
+   + 例子：
+     + MySQL：<code>SQL_DSN=root:123456@tcp(localhost:3306)/oneapi</code>
+     + PostgreSQL：<code>SQL_DSN=postgres://postgres:123456@localhost:5432/oneapi</code>（适配中，欢迎反馈）
+   + 注意需要提前建立数据库 <code>oneapi</code>，无需手动建表，程序将自动建表。
+   + 如果使用本地数据库：部署命令可添加 <code>--network="host"</code> 以使得容器内的程序可以访问到宿主机上的 MySQL。
+   + 如果使用云数据库：如果云服务器需要验证身份，需要在连接参数中添加 <code>?tls=skip-verify</code>。
+   + 请根据你的数据库配置修改下列参数（或者保持默认值）：
+     + <code>SQL_MAX_IDLE_CONNS</code>：最大空闲连接数，默认为 <code>100</code>。
+     + <code>SQL_MAX_OPEN_CONNS</code>：最大打开连接数，默认为 <code>1000</code>。
+       + 如果报错 <code>Error 1040: Too many connections</code>，请适当减小该值。
+     + <code>SQL_CONN_MAX_LIFETIME</code>：连接的最大生命周期，默认为 <code>60</code>，单位分钟。
+4. <code>LOG_SQL_DSN</code>：设置之后将为 <code>logs</code> 表使用独立的数据库，请使用 MySQL 或 PostgreSQL。
+5. <code>FRONTEND_BASE_URL</code>：设置之后将重定向页面请求到指定的地址，仅限从服务器设置。
+   + 例子：<code>FRONTEND_BASE_URL=https://openai.justsong.cn</code>
+6. <code>MEMORY_CACHE_ENABLED</code>：启用内存缓存，会导致用户额度的更新存在一定的延迟，可选值为 <code>true</code> 和 <code>false</code>，未设置则默认为 <code>false</code>。
+   + 例子：<code>MEMORY_CACHE_ENABLED=true</code>
+7. <code>SYNC_FREQUENCY</code>：在启用缓存的情况下与数据库同步配置的频率，单位为秒，默认为 <code>600</code> 秒。
+   + 例子：<code>SYNC_FREQUENCY=60</code>
+8. <code>NODE_TYPE</code>：设置之后将指定节点类型，可选值为 <code>master</code> 和 <code>slave</code>，未设置则默认为 <code>master</code>。
+   + 例子：<code>NODE_TYPE=slave</code>
+9. <code>CHANNEL_UPDATE_FREQUENCY</code>：设置之后将定期更新渠道余额，单位为分钟，未设置则不进行更新。
+   + 例子：<code>CHANNEL_UPDATE_FREQUENCY=1440</code>
+10. <code>CHANNEL_TEST_FREQUENCY</code>：设置之后将定期检查渠道，单位为分钟，未设置则不进行检查。 
+   +例子：<code>CHANNEL_TEST_FREQUENCY=1440</code>
+11. <code>POLLING_INTERVAL</code>：批量更新渠道余额以及测试可用性时的请求间隔，单位为秒，默认无间隔。
+    + 例子：<code>POLLING_INTERVAL=5</code>
+12. <code>BATCH_UPDATE_ENABLED</code>：启用数据库批量更新聚合，会导致用户额度的更新存在一定的延迟可选值为 <code>true</code> 和 <code>false</code>，未设置则默认为 <code>false</code>。
+    + 例子：<code>BATCH_UPDATE_ENABLED=true</code>
+    + 如果你遇到了数据库连接数过多的问题，可以尝试启用该选项。
+13. <code>BATCH_UPDATE_INTERVAL=5</code>：批量更新聚合的时间间隔，单位为秒，默认为 <code>5</code>。
+    + 例子：<code>BATCH_UPDATE_INTERVAL=5</code>
+14. 请求频率限制：
+    + <code>GLOBAL_API_RATE_LIMIT</code>：全局 API 速率限制（除中继请求外），单 ip 三分钟内的最大请求数，默认为 <code>180</code>。
+    + <code>GLOBAL_WEB_RATE_LIMIT</code>：全局 Web 速率限制，单 ip 三分钟内的最大请求数，默认为 <code>60</code>。
+15. 编码器缓存设置：
+    + <code>TIKTOKEN_CACHE_DIR</code>：默认程序启动时会联网下载一些通用的词元的编码，如：<code>gpt-3.5-turbo</code>，在一些网络环境不稳定，或者离线情况，可能会导致启动有问题，可以配置此目录缓存数据，可迁移到离线环境。
+    + <code>DATA_GYM_CACHE_DIR</code>：目前该配置作用与 <code>TIKTOKEN_CACHE_DIR</code> 一致，但是优先级没有它高。
+16. <code>RELAY_TIMEOUT</code>：中继超时设置，单位为秒，默认不设置超时时间。
+17. <code>RELAY_PROXY</code>：设置后使用该代理来请求 API。
+18. <code>USER_CONTENT_REQUEST_TIMEOUT</code>：用户上传内容下载超时时间，单位为秒。
+19. <code>USER_CONTENT_REQUEST_PROXY</code>：设置后使用该代理来请求用户上传的内容，例如图片。
+20. <code>SQLITE_BUSY_TIMEOUT</code>：SQLite 锁等待超时设置，单位为毫秒，默认 <code>3000</code>。
+21. <code>GEMINI_SAFETY_SETTING</code>：Gemini 的安全设置，默认 <code>BLOCK_NONE</code>。
+22. <code>GEMINI_VERSION</code>：One API 所使用的 Gemini 版本，默认为 <code>v1</code>。
+23. <code>THEME</code>：系统的主题设置，默认为 <code>default</code>，具体可选值参考<a href="./web/README.md">此处</a>。
+24. <code>ENABLE_METRIC</code>：是否根据请求成功率禁用渠道，默认不开启，可选值为 <code>true</code> 和 <code>false</code>。
+25. <code>METRIC_QUEUE_SIZE</code>：请求成功率统计队列大小，默认为 <code>10</code>。
+26. <code>METRIC_SUCCESS_RATE_THRESHOLD</code>：请求成功率阈值，默认为 <code>0.8</code>。
+27. <code>INITIAL_ROOT_TOKEN</code>：如果设置了该值，则在系统首次启动时会自动创建一个值为该环境变量值的 root 用户令牌。
+28. <code>INITIAL_ROOT_ACCESS_TOKEN</code>：如果设置了该值，则在系统首次启动时会自动创建一个值为该环境变量的 root 用户创建系统管理令牌。</p>
+</blockquote>
+<h3 id="_10">命令行参数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>--port &lt;port_number&gt;</code>: 指定服务器监听的端口号，默认为 <code>3000</code>。</li>
+<li>例子：<code>--port 3000</code></li>
+<li><code>--log-dir &lt;log_dir&gt;</code>: 指定日志文件夹，如果没有设置，默认保存至工作目录的 <code>logs</code> 文件夹下。</li>
+<li>例子：<code>--log-dir ./logs</code></li>
+<li><code>--version</code>: 打印系统版本号并退出。</li>
+<li><code>--help</code>: 查看命令的使用帮助和参数说明。</li>
+</ol>
+<h2 id="_11">演示<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">在线演示<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>注意，该演示站不提供对外服务：
+<a href="https://openai.justsong.cn">https://openai.justsong.cn</a></p>
+<h3 id="_13">截图展示<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><img alt="channel" src="https://user-images.githubusercontent.com/39998050/233837954-ae6683aa-5c4f-429f-a949-6645a83c9490.png" />
+<img alt="token" src="https://user-images.githubusercontent.com/39998050/233837971-dab488b7-6d96-43af-b640-a168e8d1c9bf.png" /></p>
+<h2 id="_14">常见问题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<ol>
+<li>额度是什么？怎么计算的？One API 的额度计算有问题？</li>
+<li>额度 = 分组倍率 * 模型倍率 * （提示 token 数 + 补全 token 数 * 补全倍率）</li>
+<li>其中补全倍率对于 GPT3.5 固定为 1.33，GPT4 为 2，与官方保持一致。</li>
+<li>如果是非流模式，官方接口会返回消耗的总 token，但是你要注意提示和补全的消耗倍率不一样。</li>
+<li>注意，One API 的默认倍率就是官方倍率，是已经调整过的。</li>
+<li>账户额度足够为什么提示额度不足？</li>
+<li>请检查你的令牌额度是否足够，这个和账户额度是分开的。</li>
+<li>令牌额度仅供用户设置最大使用量，用户可自由设置。</li>
+<li>提示无可用渠道？</li>
+<li>请检查的用户分组和渠道分组设置。</li>
+<li>以及渠道的模型设置。</li>
+<li>渠道测试报错：<code>invalid character '&lt;' looking for beginning of value</code></li>
+<li>这是因为返回值不是合法的 JSON，而是一个 HTML 页面。</li>
+<li>大概率是你的部署站的 IP 或代理的节点被 CloudFlare 封禁了。</li>
+<li>ChatGPT Next Web 报错：<code>Failed to fetch</code></li>
+<li>部署的时候不要设置 <code>BASE_URL</code>。</li>
+<li>检查你的接口地址和 API Key 有没有填对。</li>
+<li>检查是否启用了 HTTPS，浏览器会拦截 HTTPS 域名下的 HTTP 请求。</li>
+<li>报错：<code>当前分组负载已饱和，请稍后再试</code></li>
+<li>上游渠道 429 了。</li>
+<li>升级之后我的数据会丢失吗？</li>
+<li>如果使用 MySQL，不会。</li>
+<li>如果使用 SQLite，需要按照我所给的部署命令挂载 volume 持久化 one-api.db 数据库文件，否则容器重启后数据会丢失。</li>
+<li>升级之前数据库需要做变更吗？</li>
+<li>一般情况下不需要，系统将在初始化的时候自动调整。</li>
+<li>如果需要的话，我会在更新日志中说明，并给出脚本。</li>
+<li>手动修改数据库后报错：<code>数据库一致性已被破坏，请联系管理员</code>？</li>
+<li>这是检测到 ability 表里有些记录的渠道 id 是不存在的，这大概率是因为你删了 channel 表里的记录但是没有同步在 ability 表里清理无效的渠道。</li>
+<li>对于每一个渠道，其所支持的模型都需要有一个专门的 ability 表的记录，表示该渠道支持该模型。</li>
+</ol>
+<h2 id="_15">相关项目<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/labring/FastGPT">FastGPT</a>: 基于 LLM 大语言模型的知识库问答系统</li>
+<li><a href="https://github.com/Yidadaa/ChatGPT-Next-Web">ChatGPT Next Web</a>:  一键拥有你自己的跨平台 ChatGPT 应用</li>
+<li><a href="https://github.com/VisActor/VChart">VChart</a>:  不只是开箱即用的多端图表库，更是生动灵活的数据故事讲述者。</li>
+<li><a href="https://github.com/VisActor/VMind">VMind</a>:  不仅自动，还很智能。开源智能可视化解决方案。</li>
+</ul>
+<h2 id="_16">注意<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>本项目使用 MIT 协议进行开源，<strong>在此基础上</strong>，必须在页面底部保留署名以及指向本项目的链接。如果不想保留署名，必须首先获得授权。</p>
+<p>同样适用于基于本项目的二开项目。</p>
+<p>依据 MIT 协议，使用者需自行承担使用本项目的风险与责任，本开源项目开发者与此无关。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../en/" class="md-footer__link md-footer__link--prev" aria-label="Previous: English">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                English
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ja/" class="md-footer__link md-footer__link--next" aria-label="Next: 日本語">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                日本語
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-2024 OneAPI Group. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.471ce7a9.min.js"></script>
+      
+    
+  </body>
+</html>
