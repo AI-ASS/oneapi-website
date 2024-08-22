@@ -133,7 +133,8 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Home:
+  - Home: index.md
+  - README:
     - English: en.md
     - 中文: zh.md
     - 日本語: ja.md
